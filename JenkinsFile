@@ -46,7 +46,7 @@ pipeline
         }
                 
      
-        stage('Publish Allure Reports') {
+        stage('Publish Regression  Allure Reports') {
            steps {
                 script {
                     allure([
@@ -61,7 +61,7 @@ pipeline
         }
         
         
-        stage('Publish Extent Report'){
+        stage('Publish regression Extent Report'){
             steps{
                      publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
@@ -89,7 +89,7 @@ pipeline
             }
         }
         
-       git               stage('Publish sanity Extent Report'){
+        stage('Publish sanity Extent Report'){
             steps{
                      publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 

@@ -38,7 +38,7 @@ pipeline
         stage('Regression API Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/Yogesh111994/PhonePeMDPRestAssuredFramework.git'
+                    git 'https://github.com/Yogesh111994/PhonePeMDPRestAssuredFramework'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=/src/main/resources/testrunner/regression.xml"
                     
                 }
@@ -82,7 +82,7 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/Yogesh111994/PhonePeMDPRestAssuredFramework.git'
+                    git 'https://github.com/Yogesh111994/PhonePeMDPRestAssuredFramework'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=/src/main/resources/testrunner/sanity.xml"
                     
                 }

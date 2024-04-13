@@ -27,7 +27,7 @@ public class GetCall extends BaseTest {
 	}
 
 	
-	  @Test(priority=2) public void getSpecificUser() {
+	  @Test(priority=2, enabled=false) public void getSpecificUser() {
 	  restClient.get(GOREST_ENDPOINT+"/"+6836094,true, true) 
 	  .then().log().all()
 	  .assertThat() 

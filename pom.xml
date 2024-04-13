@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>PhonePeMDPRestAssured</groupId>
-  <artifactId>PhonePeMDPRestAssured</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+	<groupId>PhonePeMDPRestAssured</groupId>
+	<artifactId>PhonePeMDPRestAssured</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-  <name>PhonePeMDPRestAssured</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+	<name>PhonePeMDPRestAssured</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-    <aspectj.version>1.9.19</aspectj.version>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<aspectj.version>1.9.19</aspectj.version>
+	</properties>
 
-  <dependencies>
-    <dependency>
+	<dependencies>
+		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
 			<version>5.3.1</version>
@@ -131,16 +132,16 @@
 			<artifactId>wiremock</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		
-			<dependency>
+
+		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>${aspectj.version}</version>
 		</dependency>
-  </dependencies>
+	</dependencies>
 
-  <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven
+	<build>
+		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
 			<plugins>
 				<plugin>
@@ -161,8 +162,13 @@
 						<forkCount>3</forkCount>
 						<reuseForks>true</reuseForks>
 						<suiteXmlFiles>
+							<!--<suiteXmlFile>
+								src/main/resources/testrunner/regression.xml
+								</suiteXmlFile>-->
 							<suiteXmlFile>
-								src/main/resources/testrunner/regression.xml</suiteXmlFile>
+								${suiteXmlFile}
+							</suiteXmlFile>
+
 						</suiteXmlFiles>
 						<!--<argLine>
 							-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
@@ -209,5 +215,5 @@
 
 			</plugins>
 		</pluginManagement>
-  </build>
+	</build>
 </project>

@@ -34,10 +34,18 @@
 	</test>-->
 
 
-	<test name="Circuit API Test">
+<!--	<test name="Circuit API Test">
 		<parameter name="BaseURI" value="http://ergast.com" />
 		<classes>
 			<class name="com.qa.phonepemdp.test.CircuitAPITest" />
+		</classes>
+	</test>-->
+	
+	
+	<test name="GoRest Schema API Test">
+		<parameter name="BaseURI" value="https://gorest.co.in" />
+		<classes>
+			<class name="com.qa.phonepemdp.test.SchemaValidationTest" />
 		</classes>
 	</test>
 	

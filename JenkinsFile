@@ -35,11 +35,11 @@ pipeline
         
         
                 
-        stage('Regression API Automation Tests') {
+        stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/Yogesh111994/PhonePeMDPRestAssuredFramework'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=/src/main/resources/testrunner/regression.xml"
+                    git 'https://github.com/Yogesh111994/PhonePeMDPRestAssuredFramework.git'
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/regression.xml"
                     
                 }
             }
@@ -66,9 +66,9 @@ pipeline
                      publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
                                   keepAll: true, 
-                                  reportDir: 'target', 
-                                  reportFiles: 'APIExecutionReport.html', 
-                                  reportName: ' API Regression HTML Extent Report', 
+                                  reportDir: 'reports', 
+                                 reportFiles: 'APIExecutionReport.html', 
+                                  reportName: 'HTML Sanity Extent Report', 
                                   reportTitles: ''])
             }
         }
@@ -82,21 +82,21 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/Yogesh111994/PhonePeMDPRestAssuredFramework'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=/src/main/resources/testrunner/sanity.xml"
+                    git 'https://github.com/Yogesh111994/PhonePeMDPRestAssuredFramework.git'
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/sanity.xml"
                     
                 }
             }
         }
         
-         stage('Publish sanity Extent Report'){
+       git               stage('Publish sanity Extent Report'){
             steps{
                      publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
                                   keepAll: true, 
-                                  reportDir: 'reports', 
+                                  reportDir: 'target', 
                                   reportFiles: 'APIExecutionReport.html', 
-                                  reportName: ' API sanity HTML Extent Report', 
+                                  reportName: 'HTML Sanity Extent Report', 
                                   reportTitles: ''])
             }
         }

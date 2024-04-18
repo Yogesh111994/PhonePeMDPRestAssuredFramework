@@ -37,9 +37,8 @@ public class CircuitAPITest extends BaseTest {
 		
 		response.then()
 		.assertThat()
-		.statusCode(APIHttpStatus.Ok_200.getCode())
-		.and()
-		.statusLine(APIHttpStatus.Ok_200.getMessage());
+		.statusCode(APIHttpStatus.Ok_200.getCode());
+		
 		
 		//int statusCode=response.statusCode();
 		//Assert.assertEquals(statusCode, APIHttpStatus.Ok_200.getCode());

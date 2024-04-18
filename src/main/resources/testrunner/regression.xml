@@ -7,8 +7,8 @@
 	<listeners>
 		<listener class-name="com.qa.phonepemdp.listeners.ExtentReportListener"></listener>
 	</listeners>
-	
-<!--	<test name="Amedus Flight API Test">
+
+		<test name="Amedus Flight API Test">
 		<parameter name="BaseURI" value="https://test.api.amadeus.com" />
 		<parameter name="grantTpye" value="client_credentials" />
 		<parameter name="clientId" value="ywU9W4ZXI1EGpZyAnAXnA3JpcSbteKon" />
@@ -24,36 +24,47 @@
 		<classes>
 			<class name="com.qa.phonepemdp.test.GetCall" />
 		</classes>
-	</test>-->
+	</test>
 
-	<!--<test name="Go Rest API Post Test">
+	<test name="Go Rest API Post Test">
 		<parameter name="BaseURI" value="https://gorest.co.in" />
 		<classes>
 			<class name="com.qa.phonepemdp.test.PostCall" />
 		</classes>
-	</test>-->
+	</test>
 
 
-<!--	<test name="Circuit API Test">
+		<test name="Circuit API Test">
 		<parameter name="BaseURI" value="http://ergast.com" />
 		<classes>
 			<class name="com.qa.phonepemdp.test.CircuitAPITest" />
 		</classes>
-	</test>-->
-	
-	
-	<test name="GoRest Schema API Test">
+	</test>
+
+
+		<test name="GoRest Schema API Test">
 		<parameter name="BaseURI" value="https://gorest.co.in" />
 		<classes>
 			<class name="com.qa.phonepemdp.test.SchemaValidationTest" />
 		</classes>
 	</test>
-	
-	
-<!--	<test name="MDP Get User API Test">
+
+
+		<test name="MDP Get User API Test">
 		<parameter name="BaseURI" value="https://mdpserverqa.innoventestech.in" />
 		<classes>
 			<class name="com.qa.phonepemdp.test.MDPGetSummaryTest" />
 		</classes>
-	</test>-->
+	</test>
+
+	<test name="MDP Get Top Filter List Test">
+		<parameter name="BaseURI" value="https://mdpserverqa.innoventestech.in" />
+		<classes>
+			<class name="com.qa.phonepemdp.test.MDPClass" />
+		</classes>
+	</test>
+	
+	
+	
+	
 </suite>

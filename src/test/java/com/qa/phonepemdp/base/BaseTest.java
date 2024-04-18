@@ -33,7 +33,8 @@ public class BaseTest {
 		config= new ConfigurationManager();
 		prop =config.init();
 		this.BaseURI=BaseURI;
-		//String BaseURI=prop.getProperty("BaseURI");
-		//restClient = new RestClient( prop,BaseURI);
+	//	String BaseURI=prop.getProperty("BaseURI");
+		
+		restClient = new RestClient( prop,BaseURI);
 	}
 }

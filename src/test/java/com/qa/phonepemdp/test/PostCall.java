@@ -10,6 +10,8 @@ import com.qa.phonepemdp.base.BaseTest;
 import com.qa.phonepemdp.client.RestClient;
 import com.qa.phonepemdp.constant.APIConstant;
 import com.qa.phonepemdp.constant.APIHttpStatus;
+import com.qa.phonepemdp.pojo.GetReporteeList;
+import com.qa.phonepemdp.pojo.GetReporteeList.Timeline;
 import com.qa.phonepemdp.pojo.GoRestCreateUser;
 import com.qa.phonepemdp.util.ExcelUtil;
 import com.qa.phonepemdp.util.StringUtil;
@@ -42,14 +44,14 @@ public class PostCall extends BaseTest {
 	public void createRestUserTest(String name,String gender,String status) {
 		user= new GoRestCreateUser(name,StringUtil.getRandomEmail(),gender,status);
 		Integer userId=restClient.post(user, "json",GOREST_ENDPOINT, true, true)
-		.then()
+		.then().log().all()
 		.assertThat()
 		.statusCode(APIHttpStatus.CREATED_201.getCode())
 		.extract().path("id");
 		System.out.println(userId);
 		RestClient restClient1= new RestClient(prop,BaseURI);
 		restClient1.get(GOREST_ENDPOINT+"/"+userId, true, true)
-		.then()
+		.then().log().all()
 		.assertThat()
 		.statusCode(APIHttpStatus.Ok_200.getCode())
 		.and()
@@ -57,5 +59,10 @@ public class PostCall extends BaseTest {
 		.and()
 		.body("name",equalTo(user.getName()));
 	}
+	
+	
+
+	
+	
 }
 

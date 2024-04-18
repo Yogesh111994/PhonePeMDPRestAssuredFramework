@@ -58,13 +58,15 @@ public class RestClient {
 
 	private void addAuthorization() {
 		if(! isAuthoriztionAdded) {
-			specBuilder.addHeader("Authorization", "Bearer " + prop.getProperty("Token"));
+			specBuilder.addHeader("Authorization", "Bearer "+prop.getProperty("Token"));
 		}
 		isAuthoriztionAdded=true;
 	}
-
+	
+	
 	private RequestSpecification createReqSpec(boolean includeAuth) {
 		specBuilder.setBaseUri(BaseURI);
+	
 		if(includeAuth){
 			addAuthorization();
 		}

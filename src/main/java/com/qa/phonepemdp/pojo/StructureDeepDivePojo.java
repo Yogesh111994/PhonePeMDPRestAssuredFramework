@@ -12,32 +12,32 @@ public class StructureDeepDivePojo {
 	private Reportee reportee;
 	private Timeline timeline;
 	private Span span;
-	
-	
+
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class Reportee{
-		
+	public static class Reportee {
+
 		private String reporteeName;
-		private String reporteeEmail;
 		private String positionName;
+		private String reporteeEmail;
 		private boolean selected;
 	}
-	
+
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class Timeline{
+	public static class Timeline {
 		private String timelineText;
-		private String year;
 		private boolean selected;
+		private String year;
+		
 	}
-	
+
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class Span{
+	public static class Span {
 		private String spanText;
 		private boolean selected;
 	}

@@ -64,7 +64,7 @@
 			<class name="com.qa.phonepemdp.test.MDPClass" />
 		</classes>
 	</test>-->
-	
+
 	<!--<test name="Get ACtion ID API">
 		<parameter name="BaseURI" value="https://mdpserverqa.innoventestech.in" />
 		<classes>
@@ -73,7 +73,7 @@
 	</test>-->
 
 
-<test name="Structure Deep Dive Data">
+	<test name="Structure Deep Dive Data">
 		<parameter name="BaseURI" value="https://mdpserverqa.innoventestech.in" />
 		<classes>
 			<class name="com.qa.phonepemdp.test.StructureDeepDive" />

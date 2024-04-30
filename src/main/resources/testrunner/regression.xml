@@ -8,7 +8,7 @@
 		<listener class-name="com.qa.phonepemdp.listeners.ExtentReportListener"></listener>
 	</listeners>
 
-		<test name="Amedus Flight API Test">
+	<!--<test name="Amedus Flight API Test">
 		<parameter name="BaseURI" value="https://test.api.amadeus.com" />
 		<parameter name="grantTpye" value="client_credentials" />
 		<parameter name="clientId" value="ywU9W4ZXI1EGpZyAnAXnA3JpcSbteKon" />
@@ -16,17 +16,18 @@
 		<classes>
 			<class name="com.qa.phonepemdp.test.AmadusAuth2Test" />
 		</classes>
-	</test>
+	</test>-->
 
 
-	<test name="Go Rest API Test">
+	<!--<test name="Go Rest API Test">
 		<parameter name="BaseURI" value="https://gorest.co.in" />
+		<parameter name="BaseURI" value="https://mdpserverqa.innoventestech.in" />
 		<classes>
 			<class name="com.qa.phonepemdp.test.GetCall" />
 		</classes>
-	</test>
+	</test>-->
 
-	<test name="Go Rest API Post Test">
+	<!--	<test name="Go Rest API Post Test">
 		<parameter name="BaseURI" value="https://gorest.co.in" />
 		<classes>
 			<class name="com.qa.phonepemdp.test.PostCall" />
@@ -62,9 +63,13 @@
 		<classes>
 			<class name="com.qa.phonepemdp.test.MDPClass" />
 		</classes>
+	</test>-->
+	<test name="Get ACtion ID API">
+		<parameter name="BaseURI" value="https://mdpserverqa.innoventestech.in" />
+		<classes>
+			<class name="com.qa.phonepemdp.test.CreateActionTest" />
+		</classes>
 	</test>
-	
-	
-	
-	
+
+
 </suite>

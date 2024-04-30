@@ -10,18 +10,15 @@ import com.qa.phonepemdp.base.BaseTest;
 import com.qa.phonepemdp.client.RestClient;
 import com.qa.phonepemdp.constant.APIHttpStatus;
 
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+
 public class GetCall extends BaseTest {
-//   private String jwtToken;
 	@BeforeMethod
-	public void getUserSetup() {
-		restClient = new RestClient(prop, BaseURI);
+	public void mdpSetupTest() {
+		restClient= new RestClient(prop,BaseURI);
+		
 	}
-//	@BeforeMethod
-//	public void mdpSetupTest() {
-//		restClient= new RestClient(prop,BaseURI);
-//		jwtToken=restClient.getJwtToken("mdpuser03@innoventes.co", "MDPUser031!",PHONEPE_MDP_LOGIN_ENDPOINT);
-//		System.out.println(jwtToken);
-//	}
 
 	@Test(priority = 1)
 	public void getUser() {
@@ -51,6 +48,9 @@ public class GetCall extends BaseTest {
 	      .assertThat()
 	      .statusCode(APIHttpStatus.Ok_200.getCode()); 
 	      }
+	  
+
+	  
 	  
 	 
 }

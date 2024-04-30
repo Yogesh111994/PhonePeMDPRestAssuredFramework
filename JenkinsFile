@@ -90,8 +90,6 @@ pipeline
             }
         }
         
-        
-        
         stage('Publish sanity Allure Reports') {
            steps {
                 script {

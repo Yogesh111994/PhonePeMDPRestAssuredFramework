@@ -57,23 +57,19 @@ public class MDPClass extends BaseTest {
 		}
 
 	}
-	
+
 	@Test
 	public void getReporteeList() {
 		Response response = RestAssured.given().log().all()
 				.cookie("JwtToken",access_token)
 				.when().log().all()
 				.get("/ui/apis/getTopFilter");
-
 		int statusCode=response.statusCode();
 		Assert.assertEquals(statusCode, APIHttpStatus.Ok_200.getCode());
-	//	System.out.println(response.prettyPrint());
-
+		//	System.out.println(response.prettyPrint());
+		
 		String jsonResponse=response.body().asString();
 		List<Map<String,Object>> timeLineList=JsonPath.read(jsonResponse,"$..timelineList[*].[\"timelineText\",\"year\"]");
-		 
-		
-		
 		for(Map<String,Object> timeLineData : timeLineList) {
 			String timelineText= (String)timeLineData.get("timelineText");
 			String year =(String)timeLineData.get("year");
@@ -92,14 +88,14 @@ public class MDPClass extends BaseTest {
 			.then().log().all()
 			.assertThat()
 			.statusCode(200);
-		
 
-System.out.println("=======================================================================================");
 
-//
-//			System.out.println("TimeLineText : "+timelineText);
-//			System.out.println("TimeLineYear: "+ year);
-//			System.out.println("-------------");		
+			System.out.println("=======================================================================================");
+
+			//
+			//			System.out.println("TimeLineText : "+timelineText);
+			//			System.out.println("TimeLineYear: "+ year);
+			//			System.out.println("-------------");		
 		}
 
 
